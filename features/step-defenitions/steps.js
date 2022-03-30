@@ -17,6 +17,6 @@ When('I type testRun in search field', async () => {
 });
 
 Then('I click on {string} returned result', async (linkName) => {
-    await LoginPage.rtsLabsLink(linkName).click();
+    await LoginPage.link(linkName).click();
 });
 

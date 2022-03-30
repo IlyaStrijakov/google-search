@@ -12,7 +12,7 @@ class LoginPage extends Page {
         return $('(//input[@value="Google Search"])[1]');
     }
 
-    rtsLabsLink (linkName) {
+    link (linkName) {
         return $(`//div[@role="link" and .="${linkName}"]`)
     }
     

@@ -72,3 +72,6 @@ Suggested to use the latest v10 of NodeJS
 
 # To set up and install WDIO/Cucumber
 https://webdriver.io/docs/gettingstarted
+
+* ```npm install```
+* ```npm run test```
