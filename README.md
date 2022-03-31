@@ -74,4 +74,7 @@ Suggested to use the latest v10 of NodeJS
 https://webdriver.io/docs/gettingstarted
 
 * ```npm install```
-* ```npm run test```
+   
+# To run tests
+   
+* ```npm run wdio```
