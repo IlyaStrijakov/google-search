@@ -9,22 +9,20 @@ Given('I open {string} page', async (url) => {
 });
 
 When('I type {string} in search field', async (searchQuery) => {
+    await SearchPage.waitForPageToLoad();
     await SearchPage.googleSearchInputField.setValue(searchQuery);
     await SearchPage.btnSearch.waitForDisplayed();
     await SearchPage.btnSearch.click();
-    //await browser.pause(2000); // For visual purposes only. Uncomment if necessary.
 });
 
 When('I click on {string} link', async (searchQuery) => {
     await SearchPage.link(searchQuery).waitForDisplayed();
     await SearchPage.link(searchQuery).click();
-    //await browser.pause(2000); // For visual purposes only. Uncomment if necessary.
 });
 
 Then('I verify I am on the {string} page', async (searchQuery) => {
-    let actualLogoName = await SearchPage.headerTag(searchQuery).getText();
-    let expectedLogoName = await SearchPage.headerTag(searchQuery).getText();
-    expect(actualLogoName).to.eql(expectedLogoName);
+    await SearchPage.waitForPageToLoad();
+    expect(await SearchPage.headerTag(searchQuery).isExisting()).to.eql(true);
 });
 
 
