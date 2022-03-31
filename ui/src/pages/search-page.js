@@ -18,6 +18,17 @@ class SearchPage extends Base {
     headerTag (searchQuery) {
         return $(`//h1[@class="hidden" and contains(text(),"${searchQuery}")]`);
     }
+
+    async waitForPageToLoad () {
+        await browser.waitUntil (
+            () => browser.execute (() => document.readyState === 'complete'),
+            {
+            timeout: 60 * 1000, // 60 seconds
+            timeoutMsg: 'Failed to load'
+            }
+        );
+    }
+
 }
 
-export default new SearchPage();
+export default new SearchPage ();
