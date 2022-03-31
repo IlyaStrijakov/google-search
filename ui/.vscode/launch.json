@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "protocol": "inspector", 
+            "request": "launch",
+            "port": 9229,
+            "name": "Localhost - Browser",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/wdio",
+            "windows": {
+                "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/wdio.cmd"
+            },
+            "cwd": "${workspaceRoot}",
+            "console": "integratedTerminal",
+            "args":[
+                "${workspaceRoot}/src/config/wdio.conf.js",
+                "--spec", "${relativeFile}"
+            ],
+            "env": { "NODE_TLS_REJECT_UNAUTHORIZED":"0" }
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "parserOptions": {
+      "ecmaVersion": 11,
+      "sourceType": "module"
+    },
+     "plugins": [
+        "json"
+     ],
+     "extends": [
+        "plugin:node/recommended"
+    ],
+    "rules": {
+      "node/no-unsupported-features/es-syntax": "off",
+      "node/no-unpublished-import": "off"
+    },
+    "globals": {
+      "context": true,
+      "$": true,
+      "$$": true,
+      "browser": true
+    }
+  }
